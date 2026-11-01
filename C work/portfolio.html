@@ -1,54 +1,63 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Clients</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roshan Ali || My Clients</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{font-family:'Inter',sans-serif;}
+    body{background:linear-gradient(180deg,#0a0a0f 0%,#12101a 50%,#0a0a0f 100%);color:#e5e7eb;overflow-x:hidden;min-height:100vh;}
+    .glass{background:rgba(19,19,26,.6);backdrop-filter:blur(12px);border:1px solid #1f1f2a;}
+    .gradient-text{background:linear-gradient(135deg,#ff3b6b,#7c3aed,#3b82f6);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .btn-primary{background:linear-gradient(135deg,#ff3b6b,#7c3aed);color:#fff;}
+    .btn-primary:hover{filter:brightness(1.1);}
+    .btn-secondary{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:#fff;}
+    .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My Clients</h1>
-    </header>
-    <main>
-        <section id="portfolio">
-           
-            <div class="gallery">
-                <div class="gallery-item"><img src="1.jpg" alt=first one></div>
-                <div class="gallery-item"><img src="2.jpg" alt="2nd"></div>
-                <div class="gallery-item"><img src="3.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="4.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="5.jpg" alt="Work 1"></div>
-                <div class="gallery-item"><img src="6.jpg" alt="Work 2"></div>
-                <div class="gallery-item"><img src="7.jpg" alt="Work 3"></div>
-                <div class="gallery-item"><img src="8.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="9.jpg" alt="Work 1"></div>
-                <div class="gallery-item"><img src="10.jpg" alt="Work 2"></div>
-                <div class="gallery-item"><img src="11.jpg" alt="Work 3"></div>
-                <div class="gallery-item"><img src="12.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="13.jpg" alt="Work 1"></div>
-                <div class="gallery-item"><img src="14.jpg" alt="Work 2"></div>
-                <div class="gallery-item"><img src="15.jpg" alt="Work 3"></div>
-                <div class="gallery-item"><img src="16.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="17.jpg" alt="Work 1"></div>
-                <div class="gallery-item"><img src="18.jpg" alt="Work 2"></div>
-                <div class="gallery-item"><img src="19.jpg" alt="Work 3"></div>
-                <div class="gallery-item"><img src="20.jpg" alt="Work 4"></div>
-                <div class="gallery-item"><img src="21.jpg" alt="Work 4"></div>
-                
-
-               
-
-
-
-                
-                <!-- Add more items as needed -->
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; Copyright  All rights reserved | Design by Roshan Ali</p>
-    </footer>
+  <header class="glass fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="text-xl font-bold gradient-text">Roshan Ali</a>
+      <a href="../index.html" class="btn-secondary px-4 py-2 rounded-full text-sm">Back to Portfolio</a>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 pt-28 pb-16">
+    <div class="text-center mb-12">
+      <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">My Clients</span>
+      <h1 class="text-4xl md:text-5xl font-black mt-2">Client Work Gallery</h1>
+      <p class="text-gray-400 mt-4">A showcase of work delivered for clients.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="1.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="2.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="3.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="4.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="5.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="6.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="7.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="8.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="9.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="10.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="11.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="12.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="13.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="14.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="15.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="16.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="17.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="18.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="19.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="20.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+      <img src="21.jpg" class="w-full h-48 object-cover rounded-2xl glass" alt="client work">
+    </div>
+  </main>
+  <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+    Created by Roshan Ali
+  </footer>
 </body>
 </html>
