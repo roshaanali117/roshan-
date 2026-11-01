@@ -332,11 +332,9 @@
       <div class="flex flex-wrap justify-center gap-4">
         <img src="assets/images/icons/photoshop.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Photoshop">
         <img src="assets/images/icons/figma.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Figma">
-        <img src="assets/images/icons/xd.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="XD">
-        <img src="assets/images/icons/angularjs.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Angular">
-        <img src="assets/images/icons/react.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="React">
-        <img src="assets/images/icons/vuejs.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Vue">
-        <img src="assets/images/icons/js.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="JS">
+        <div class="w-16 h-16 glass rounded-xl p-2 flex items-center justify-center" aria-label="Illustrator">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10" fill="#FF9A00"><rect width="24" height="24" rx="3" fill="#330000"/><text x="12" y="17" text-anchor="middle" font-size="12" font-weight="bold" fill="#FF9A00" font-family="Arial">Ai</text></svg>
+        </div>
       </div>
       <div class="mt-12 grid md:grid-cols-2 gap-8 items-stretch">
         <div class="glass rounded-2xl p-6 reveal flex flex-col">
@@ -614,6 +612,7 @@
     function closeBlog(){document.getElementById('blogModal').classList.add('hidden');}
     function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.remove('hidden');}
     function closeLightbox(){document.getElementById('lightbox').classList.add('hidden');}
+    document.querySelectorAll('img').forEach(img=>{if(img.id==='lightboxImg')return;img.style.cursor='zoom-in';img.addEventListener('click',()=>openLightbox(img.src));});
     const pContainer=document.getElementById('particles');
     for(let i=0;i<25;i++){const s=document.createElement('span');s.className='particle';const size=4+Math.random()*6;s.style.width=size+'px';s.style.height=size+'px';s.style.left=Math.random()*100+'%';s.style.bottom=Math.random()*20+'%';s.style.animationDelay=Math.random()*8+'s';s.style.animationDuration=(6+Math.random()*6)+'s';pContainer.appendChild(s);}
     const showMoreBtn=document.getElementById('showMoreBtn');
