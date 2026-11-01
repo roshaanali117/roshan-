@@ -1,1607 +1,623 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Roshan Ali || Personal Portfolio</title>
-    <meta name="robots" content="noindex, follow">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <!-- CSS 
-    ============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/aos.css">
-    <link rel="stylesheet" href="assets/css/plugins/feature.css">
-    <!-- Style css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roshan Ali || Personal Portfolio</title>
+  <meta name="description" content="Roshan Ali - Graphic Designer, Social Media Marketer & E-Commerce Manager.">
+  <link rel="shortcut icon" href="work/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{--bg:#0a0a0f;--card:#13131a;--border:#1f1f2a;--accent:#ff3b6b;--accent2:#7c3aed;}
+    *{font-family:'Inter',sans-serif;}
+    body{background:linear-gradient(180deg,#0a0a0f 0%,#12101a 50%,#0a0a0f 100%);color:#e5e7eb;overflow-x:hidden;min-height:100vh;}
+    .bg-orb{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.35) 0%,rgba(0,0,0,0) 70%);filter:blur(40px);pointer-events:none;}
+    .orb-1{width:300px;height:300px;top:10%;left:35%;}
+    .orb-2{width:220px;height:220px;top:40%;right:10%;}
+    main{position:relative;z-index:1;}
+    .gradient-text{background:linear-gradient(135deg,#ff3b6b,#7c3aed,#3b82f6);-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .glass{background:rgba(19,19,26,.6);backdrop-filter:blur(12px);border:1px solid var(--border);}
+    .hero-glow{position:absolute;inset:0;background:radial-gradient(600px circle at 70% 30%,rgba(255,59,107,.25),transparent 60%),radial-gradient(500px circle at 20% 70%,rgba(124,58,237,.2),transparent 60%);pointer-events:none;}
+    .marquee{display:flex;animation:marq 30s linear infinite;white-space:nowrap;}
+    @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    .card-hover{transition:transform .3s ease,box-shadow .3s ease;}
+    .glow-spot{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;z-index:-1;animation:blobMove 14s ease-in-out infinite;}
+    .glow-1{width:400px;height:400px;background:#ff3b6b;top:10%;left:-5%;}
+    .glow-2{width:350px;height:350px;background:#7c3aed;bottom:10%;right:-5%;animation-delay:3s;}
+    .glow-3{width:300px;height:300px;background:#3b82f6;top:50%;left:50%;animation-delay:6s;}
+    .gallery-img{transition:transform .4s ease,filter .4s ease;}
+    .gallery-img:hover{transform:scale(1.08) rotate(1deg);filter:brightness(1.1);}
+    .project-img{transition:transform .5s ease,filter .5s ease;}
+    .project-img:hover{transform:scale(1.06);filter:brightness(1.05);}
+    .particle{position:absolute;border-radius:50%;pointer-events:none;background:rgba(255,59,107,.6);animation:particleFloat 8s linear infinite;}
+    @keyframes particleFloat{0%{transform:translateY(0) translateX(0);opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{transform:translateY(-100vh) translateX(20px);opacity:0;}}
+    .nav-link{position:relative;}
+    .nav-link::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,#ff3b6b,#7c3aed);transition:width .3s;}
+    .nav-link:hover::after{width:100%;}
+    .btn-primary{background:linear-gradient(135deg,#ff3b6b,#7c3aed);color:#fff;}
+    .btn-secondary{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:#fff;backdrop-filter:blur(10px);}
+    .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);}
+    .timeline-dot{background:linear-gradient(135deg,#ff3b6b,#7c3aed);}
+    /* Ultra Liquid Blob Cursor */
+    .liquid-blob-cursor{position:fixed;top:0;left:0;width:32px;height:32px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%) scale(1);background:radial-gradient(circle at 35% 35%,rgba(244,114,182,.95),rgba(168,85,247,.75) 60%,rgba(99,102,241,.4));border:1px solid rgba(255,255,255,.4);box-shadow:0 0 15px rgba(244,114,182,.6),0 0 35px rgba(168,85,247,.4),inset 0 0 10px rgba(255,255,255,.6);transition:width .3s cubic-bezier(.19,1,.22,1),height .3s cubic-bezier(.19,1,.22,1),background .3s ease,border-radius .3s ease,border-color .3s ease;}
+    .liquid-blob-cursor::after{content:'';position:absolute;top:50%;left:50%;width:5px;height:5px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 8px #fff;opacity:.9;}
+    .liquid-blob-cursor.is-hovering{width:65px;height:65px;background:radial-gradient(circle at 30% 30%,rgba(244,114,182,.3),rgba(168,85,247,.25) 70%);border-color:rgba(244,114,182,.9);box-shadow:0 0 25px rgba(244,114,182,.8),0 0 50px rgba(168,85,247,.5),inset 0 0 15px rgba(255,255,255,.4);}
+    .liquid-blob-cursor.is-hovering::after{opacity:0;}
+    .liquid-droplet{position:fixed;top:0;left:0;width:14px;height:14px;background:radial-gradient(circle,rgba(244,114,182,.8),rgba(168,85,247,.4));border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%) scale(1);box-shadow:0 0 12px rgba(168,85,247,.6);animation:fadeDroplet .55s ease-out forwards;}
+    @keyframes fadeDroplet{0%{opacity:.85;transform:translate(-50%,-50%) scale(1);}100%{opacity:0;transform:translate(-50%,-50%) scale(.1);}}
+    body{cursor:none;}
+    a,button{cursor:none;}
+    .bubble{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.8),rgba(255,59,107,.4));box-shadow:0 0 15px rgba(255,59,107,.4);animation:floatBubble 6s ease-in-out infinite;}
+    @keyframes floatBubble{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-30px) scale(1.1);}}
+    .blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.35;animation:blobMove 12s ease-in-out infinite;}
+    @keyframes blobMove{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(40px,-30px) scale(1.1);}66%{transform:translate(-30px,40px) scale(.9);}}
+    .scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none;}
+    .project-img{transition:transform .5s ease;}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+  </style>
 </head>
-
-
-<body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
-
-    <!-- Start Header -->
-    <header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
-        <div class="header-wrapper rn-popup-mobile-menu m--0 row align-items-center">
-            <!-- Start Header Left -->
-            <div class="col-lg-2 col-6">
-                <div class="header-left">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo/logo.png" alt="logo">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- End Header Left -->
-            <!-- Start Header Center -->
-            <div class="col-lg-10 col-6">
-                <div class="header-center">
-                    <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block">
-                        <!-- Start Mainmanu Nav -->
-                        <ul class="primary-menu nav nav-pills">
-                            <li class="nav-item"><a class="nav-link smoth-animation active" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Features</a></li>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio">Portfolio</a>
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#resume">Resume</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link smoth-animation" href="#pricing">Pricing</a></li> -->
-                            <li class="nav-item"><a class="nav-link smoth-animation" href="#contacts">Contact</a></li>
-                        </ul>
-                        <!-- End Mainmanu Nav -->
-                    </nav>
-                    <!-- Start Header Right  -->
-                    <div class="header-right">
-                        <!-- <a class="rn-btn" target="_blank" href="../../checkout/83025947/create_account.html?license=regular"><span>BUY NOW</span></a> -->
-                        <div class="hamberger-menu d-block d-xl-none">
-                            <i id="menuBtn" class="feather-menu humberger-menu"></i>
-                        </div>
-                        <div class="close-menu d-block">
-                            <span class="closeTrigger">
-                                <i data-feather="x"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- End Header Right  -->
-
-                </div>
-            </div>
-            <!-- End Header Center -->
-        </div>
-    </header>
-    <!-- End Header Area -->
-    <!-- Start Popup Mobile Menu  -->
-    <div class="popup-mobile-menu">
-        <div class="inner">
-            <div class="menu-top">
-                <div class="menu-header">
-                    <a class="logo" href="index.html">
-                        <img src="assets/images/logo/logos-circle.png" alt="Personal Portfolio">
-                    </a>
-                    <div class="close-button">
-                        <button class="close-menu-activation close"><i data-feather="x"></i></button>
-                    </div>
-                </div>
-                <!-- <p class="discription">Inbio is a personal portfolio template. You can customize all.</p> -->
-            </div>
-            <div class="content">
-                <ul class="primary-menu nav nav-pills">
-                    <li class="nav-item"><a class="nav-link smoth-animation active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link smoth-animation" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link smoth-animation" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link smoth-animation" href="#resume">Resume</a></li>
-
-                    <li class="nav-item"><a class="nav-link smoth-animation" href="#contacts">Contact</a></li>
-                </ul>
-                <!-- social sharea area -->
-                <div class="social-share-style-1 mt--40">
-                    <span class="title">find with me</span>
-                    <ul class="social-share d-flex liststyle">
-                        <li class="facebook"><a href="https://web.facebook.com/inaam1992/"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-facebook">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                </svg></a>
-                        </li>
-                        <li class="instagram"><a href="https://www.instagram.com/inaamajay/"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-instagram">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg></a>
-                        </li>
-                        <li class="linkedin"><a href="https://www.linkedin.com/in/inam-ur-rehman-366b1120b/"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-linkedin">
-                                    <path
-                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                    </path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- end -->
-            </div>
-        </div>
+<body>
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold gradient-text">Roshan Ali</a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#home" class="nav-link interactive">Home</a>
+        <a href="#projects" class="nav-link interactive">Projects</a>
+        <a href="#about" class="nav-link interactive">About</a>
+        <a href="#skills" class="nav-link interactive">Skills</a>
+        <a href="#experience" class="nav-link interactive">Experience</a>
+        <a href="#education" class="nav-link interactive">Education</a>
+        <a href="#gallery" class="nav-link interactive">Gallery</a>
+        <a href="#contact" class="nav-link interactive">Contact</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
-    <!-- End Popup Mobile Menu  -->
-
-
-
-
-    <main class="main-page-wrapper">
-
-        <!-- Start Slider Area -->
-        <div id="home" class="rn-slider-area">
-            <div class="slide slider-style-1">
-                <div class="container">
-                    <div class="row row--30 align-items-center">
-                        <div class="order-2 order-lg-1 col-lg-7 mt_md--50 mt_sm--50 mt_lg--30">
-                            <div class="content">
-                                <div class="inner">
-                                    <span class="subtitle">Welcome to my world</span>
-                                    <h1 class="title">Hi, I’m <span>Roshan Ali</span><br>
-                                        <span class="header-caption" id="page-top">
-                                            <!-- type headline start-->
-                                            <span class="cd-headline clip is-full-width">
-                                                <span>a </span>
-                                                <!-- ROTATING TEXT -->
-                                                <span class="cd-words-wrapper">
-                                                    <b class="is-visible">Graphic Designer.</b>
-                                                    <b class="is-hidden">Social Media Marketer.</b>
-                                                    <b class="is-hidden">E-Commerce Manager.</b>
-                                                </span>
-                                            </span>
-                                            <!-- type headline end -->
-                                        </span>
-                                    </h1>
-
-                                    <div>
-                                        <p class="description">Hi’ I am Roshan Ali, I am professionally trained in
-                                            Graphic Designing, I am a
-                                            bright and receptive person, able to communicate with people at all levels.
-                                            I
-                                            am good at working using my own initiative and I am flexible in my approach
-                                            to work duties. I have a good sense of humour and a pleasant approach.</p>
-                                    </div>
-                                    <br>
-                                    <!-- <button style="background-color: #ff104f; height: 40px; width:100px; border-radius: 50px; font-size: 1.11rem; color: white; border: none;">See my Work</button> -->
-                                    <p><a href="work/portfolio.html" class="btn btn-primary py-3 px-4 px-01" style="border-radius: 5rem; background-color: #ff104f;">See my Work</a>
-                                        <a href="C work/portfolio.html" class="btn btn-primary py-3 px-4" style="border-radius: 5rem; background-color: #ff104f;">My Clients
-                                            </a>
-                                            <a href="https://drive.google.com/file/d/1cz8t2nPo1K1PZpFelslWI5LarZ7R9wV-/view?usp=drive_link" class="btn btn-primary py-3 px-4" style="border-radius: 5rem; background-color: #ff104f;">My portfolio Work
-                                            </a>
-                                            <br>
-                                            <br>
-                                            <a href="https://drive.google.com/file/d/1IYF0akqlN7Eskr37kRFijiAUhQH1fHdc/view?usp=drive_link" class="btn btn-primary py-4 px-5" style="border-radius: 5rem;">Download My Resume</a>
-                                            
-                                    </p>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12">
-                                        <div class="social-share-inner-left">
-                                            <span class="title">find me on</span>
-                                            <ul class="social-share d-flex liststyle">
-                                                <li class="facebook"><a
-                                                        href="https://www.facebook.com/profile.php?id=100019404931755&mibextid=ZbWKwL"><i
-                                                            data-feather="facebook"></i></a>
-                                                </li>
-                                                <li class="instagram"><a
-                                                        href="https://instagram.com/roshaanali_117?igshid=NGVhN2U2NjQ0Yg=="><i
-                                                            data-feather="instagram"></i></a>
-                                                </li>
-                                                <li class="linkedin"><a
-                                                        href="https://www.linkedin.com/in/roshan-ali-63274b249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
-                                                            data-feather="linkedin"></i></a>
-                                                             </li>
-                                                <li class="youtube"><a
-                                                        href="https://youtube.com/@roshaanofficial001?si=2NteXI4nRWZjfNOV"><i
-                                                            data-feather="youtube"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-xl-6 col-md-6 col-sm-6 col-12 mt_mobile--30">
-                                        <div class="skill-share-inner">
-                                            <span class="title">best skill on</span>
-                                            <ul class="skill-share d-flex liststyle">
-                                                <li><img src="assets/images/icons/icons-01.png" alt="Icons Images"></li>
-                                                <li><img src="assets/images/icons/icons-02.png" alt="Icons Images"></li>
-                                                <li><img src="assets/images/icons/icons-03.png" alt="Icons Images"></li>
-                                                <li><img src="assets/images/icons/icons-04.png" alt="Icons Images"></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="order-1 order-lg-2 col-lg-5">
-                            <div class="thumbnail">
-                                <div class="inner">
-                                    <img src="assets/images/slider/banner-01.png" alt="Personal Portfolio Images">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Slider Area -->
-
-        <!-- Start Service Area -->
-        <div class="rn-service-area rn-section-gap section-separator" id="features">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-left" data-aos="fade-up" data-aos-duration="500"
-                            data-aos-delay="100" data-aos-once="true">
-                            <span class="subtitle">Features</span>
-                            <h2 class="title">What I Do</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row--25 mt_md--10 mt_sm--10">
-
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="layout"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="https://wa.me/923117538314">Visualization Design</a></h4>
-                                    <p class="description">As a visualization designer, I specialize in transforming
-                                        complex data into clear, compelling visual narratives. My expertise lies in
-                                        creating interactive charts, graphs, and infographics that enhance understanding
-                                        and drive decision-making.</p>
-                                    <!-- <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a> -->
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="grid"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="https://wa.me/923117538314">Social Media Marketing</a></h4>
-                                    <p class="description">As a social media marketer, I specialize in creating and
-                                        executing strategies that amplify brand presence across various platforms. My
-                                        expertise lies in crafting engaging content, managing social media campaigns,
-                                        and analyzing performance metrics to drive growth and engagement.</p>
-                                    <!-- <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a> -->
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    <!-- End SIngle Service -->
-                    <!-- Start Single Service -->
-                    <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-service">
-                            <div class="inner">
-                                <div class="icon">
-                                    <i data-feather="aperture"></i>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="https://wa.me/923117538314">Graphic Design</a></h4>
-                                    <p class="description">As a graphic designer, I have the unique ability to transform ideas into visually compelling designs that communicate effectively and leave a lasting impression. My role goes beyond just creating eye-catching visuals; it’s about understanding the client’s vision, target audience, and goals to craft designs that tell a story and resonate with people.</p>
-                                    <!-- <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a> -->
-                                </div>
-                            </div>
-                            <a class="over-link" href="#"></a>
-                        </div>
-                    </div>
-                    
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <!-- End Service Area  -->
-
-        <!-- Start Portfolio Area -->
-        <div class="rn-portfolio-area rn-section-gap section-separator" id="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center">
-                            <span class="subtitle">Visit my portfolio and Contact with me</span>
-                            <h2 class="title">My Portfolio</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row row--25 mt--10 mt_md--10 mt_sm--10">
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCenterr">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">Social Media Post Design</a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                10</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">Social Media Post<i
-                                                class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#ee">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/project-2.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">Logo Design</a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                5</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">Logo Design Work <i
-                                                class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCente">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">Thumbnail</a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                8</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">Thumbnail Design<i
-                                                class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="500" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCent">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">T Shirt </a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                9</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">T Shirt Design Work
-                                            <i class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="100" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCen">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/portfolio-04.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">Business Card</a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                360</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">Business Card Design<i
-                                                class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-
-                    <!-- Start Single Portfolio -->
-                    <div data-aos="fade-up" data-aos-delay="300" data-aos-once="true"
-                        class="col-lg-6 col-xl-4 col-md-6 col-12 mt--50 mt_md--30 mt_sm--30">
-                        <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCe">
-                            <div class="inner">
-                                <div class="thumbnail" style="overflow: auto; height: 200px;">
-                                    <a href="javascript:void(0)">
-                                        <img src="assets/images/portfolio/portfolio-05.jpg" style="height:156px;"
-                                            alt="Personal Portfolio Images">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <div class="category-info">
-                                        <div class="category-list">
-                                            <a href="javascript:void(0)">3D Editing</a>
-                                        </div>
-                                        <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                                280</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="title"><a href="javascript:void(0)">3D Editing Work<i
-                                                class="feather-arrow-up-right"></i></a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Portfolio -->
-
-
-
-                    <!-- Start Resume Area -->
-                    <div class="rn-resume-area rn-section-gap section-separator" id="resume">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="section-title text-center">
-                                        <span class="subtitle">2+ Years of Experience</span>
-                                        <h2 class="title">My Resume</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt--45">
-                                <div class="col-lg-12">
-                                    <ul class="rn-nav-list nav nav-tabs" id="myTabs" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="education-tab" data-toggle="tab"
-                                                href="#education" role="tab" aria-controls="education"
-                                                aria-selected="true">education</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="professional-tab" data-toggle="tab"
-                                                href="#professional" role="tab" aria-controls="professional"
-                                                aria-selected="false">professional
-                                                Skills</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience"
-                                                role="tab" aria-controls="experience"
-                                                aria-selected="false">experience</a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                <a class="nav-link" id="interview-tab" data-toggle="tab" href="#interview" role="tab" aria-controls="interview" aria-selected="false">interview</a>
-                            </li> -->
-                                    </ul>
-                                    <!-- Start Tab Content Wrapper  -->
-                                    <div class="rn-nav-content tab-content" id="myTabContents">
-                                        <!-- Start Single Tab  -->
-                                        <div class="tab-pane show active fade single-tab-area" id="education"
-                                            role="tabpanel" aria-labelledby="education-tab">
-                                            <div class="personal-experience-inner mt--40">
-                                                <div class="row">
-                                                    <!-- Start Skill List Area  -->
-                                                    <div class="col-lg-6 col-md-12 col-12">
-                                                        <div class="content">
-                                                            <span class="subtitle">2021 - 2023</span>
-                                                            <h4 class="maintitle">Education Quality</h4>
-                                                            <div class="experience-list">
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Matric Computer Science</h4>
-                                                                                <span>Govt. Model High School NO.1
-                                                                                    Sargodha (2020 - 2021)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.30/5</span>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4> DIT Information Technology</h4>
-                                                                                <span>Fips College Sargodha (2022 -
-                                                                                    2023)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.50/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Textile Design Diploma</h4>
-                                                                                <span>IFD College Sargodha (2021 -
-                                                                                    2022)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.50/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Skill List Area  -->
-
-                                                    <!-- Start Skill List Area 2nd  -->
-                                                    <div class="col-lg-6 col-md-12 col-12 mt_md--60 mt_sm--60">
-                                                        <div class="content">
-                                                            <span class="subtitle">2022 - 2024</span>
-                                                            <h4 class="maintitle">Job Experience</h4>
-                                                            <div class="experience-list">
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Graphic Design</h4>
-                                                                                <span>Arsa Study Consultants
-                                                                                    (2023-Continue)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.90/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">For the past two years, I
-                                                                            have been working as a graphic designer at
-                                                                            ARSA Study Consultants. In this role, I
-                                                                            specialize in creating visually compelling
-                                                                            marketing materials, including brochures,
-                                                                            social media graphics, and promotional
-                                                                            banners. My work involves collaborating with
-                                                                            the marketing team to develop designs that
-                                                                            effectively communicate our services and
-                                                                            engage our target audience. With a strong
-                                                                            attention to detail and a passion for
-                                                                            creativity, I contribute to enhancing the
-                                                                            brand's visual identity and supporting its
-                                                                            growth.
-
-
-
-
-
-
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Graphic Design</h4>
-                                                                                <span>IFD College Sargodha (2022 -
-                                                                                    2023)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>5/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">With one year of
-                                                                            experience as a graphic designer at IFD
-                                                                            College Sargodha, I specialize in creating
-                                                                            visually appealing and effective designs for
-                                                                            various college materials. My
-                                                                            responsibilities include developing
-                                                                            promotional graphics, designing event
-                                                                            posters, and enhancing the overall visual
-                                                                            identity of the college. I work closely with
-                                                                            the administration and marketing teams to
-                                                                            ensure that all designs align with the
-                                                                            college's brand and communication goals. My
-                                                                            creative skills and attention to detail help
-                                                                            in delivering impactful visuals that engage
-                                                                            and inform our audience.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Online Marketing Business</h4>
-                                                                                <span>Graphic Design, Google Business, Products Marketing, E-Commerce (2022-Continue)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>5.00/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">As the owner of RA Graphics Agency and manager of my online 
-                                                                            marketing business, I offer a comprehensive suite of creative and strategic 
-                                                                            services tailored to today’s digital demands. My expertise spans across 
-                                                                            graphic design, YouTube channel management, Google Business, 
-                                                                            and social media operations, helping businesses establish a strong and 
-                                                                            professional online presence. In addition to these core services, I also 
-                                                                            work extensively in the e-commerce sector, providing support in setting up 
-                                                                            and managing online stores on platforms like Etsy. I develop and execute targeted 
-                                                                            strategies that enhance visibility, boost engagement, and increase sales. My 
-                                                                            approach is centered on understanding the unique needs of each brand and delivering 
-                                                                            customized solutions that drive real, measurable growth in a competitive digital marketplace.
-
-
-
-
-
-
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Skill List Area  -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Tab  -->
-
-                                        <!-- Start Single Tab  -->
-                                        <div class="tab-pane fade " id="professional" role="tabpanel"
-                                            aria-labelledby="professional-tab">
-                                            <div class="personal-experience-inner mt--40">
-                                                <div class="row row--40">
-
-                                                    <!-- Start Single Progressbar  -->
-                                                    <div class="col-lg-6 col-md-6 col-12">
-                                                        <div class="progress-wrapper">
-                                                            <div class="content">
-                                                                <span class="subtitle">Features</span>
-                                                                <h4 class="maintitle">Design Skill</h4>
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Graphic Design</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.5s"
-                                                                            data-wow-delay=".3s" role="progressbar"
-                                                                            style="width: 80%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="80"><span
-                                                                                class="percent-label">80%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Textile Design</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.6s"
-                                                                            data-wow-delay=".4s" role="progressbar"
-                                                                            style="width: 60%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="0"><span
-                                                                                class="percent-label">60%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">RP Jewellery Design
-                                                                    </h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.7s"
-                                                                            data-wow-delay=".5s" role="progressbar"
-                                                                            style="width: 60%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">60%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">E-Commerce
-                                                                    </h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.8s"
-                                                                            data-wow-delay=".6s" role="progressbar"
-                                                                            style="width: 70%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">70%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Art Design</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.9s"
-                                                                            data-wow-delay=".7s" role="progressbar"
-                                                                            style="width: 60%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">60%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Single Progressbar  -->
-
-                                                    <!-- Start Single Progressbar  -->
-                                                    <div class="col-lg-6 col-md-6 col-12 mt_sm--60">
-                                                        <div class="progress-wrapper">
-                                                            <div class="content">
-                                                                <span class="subtitle">Features</span>
-                                                                <h4 class="maintitle">Development Skill</h4>
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">HTML</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.5s"
-                                                                            data-wow-delay=".3s" role="progressbar"
-                                                                            style="width: 80%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">80%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Boot Strap 5.2</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.6s"
-                                                                            data-wow-delay=".4s" role="progressbar"
-                                                                            style="width: 80%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">80%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Business Management</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.7s"
-                                                                            data-wow-delay=".5s" role="progressbar"
-                                                                            style="width: 80%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">80%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Social Media
-                                                                        Marketing</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.8s"
-                                                                            data-wow-delay=".6s" role="progressbar"
-                                                                            style="width: 80%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">80%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                                <!-- Start Single Progress Charts -->
-                                                                <div class="progress-charts">
-                                                                    <h6 class="heading heading-h6">Etsy</h6>
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar wow fadeInLeft"
-                                                                            data-wow-duration="0.9s"
-                                                                            data-wow-delay=".7s" role="progressbar"
-                                                                            style="width: 70%" aria-valuenow="85"
-                                                                            aria-valuemin="0" aria-valuemax="100"><span
-                                                                                class="percent-label">70%</span></div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single Progress Charts -->
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Single Progressbar  -->
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Tab  -->
-
-                                        <!-- Start Single Tab  -->
-                                        <div class="tab-pane fade" id="experience" role="tabpanel"
-                                            aria-labelledby="experience-tab">
-                                            <div class="personal-experience-inner mt--40">
-                                                <div class="row">
-                                                    <!-- Start Skill List Area  -->
-                                                    <div class="col-lg-6 col-md-12 col-12">
-                                                        <div class="content">
-                                                            <span class="subtitle">2021 - 2023</span>
-                                                            <h4 class="maintitle">Education Quality</h4>
-                                                            <div class="experience-list">
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Matric Computer Science
-                                                                                </h4>
-                                                                                <span>Govt. Model High School No.1
-                                                                                    Sargodha (2020 -
-                                                                                    2021)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.30/5</span>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>DIT Information Technology</h4>
-                                                                                <span>Fips College Sargodha (2022 -
-                                                                                    2023)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.50/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Textile Design Diploma</h4>
-                                                                                <span>IFD College Sargodha (2021 -
-                                                                                    2022)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.50/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                                                <!-- End Single List  -->
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End Skill List Area  -->
-
-                                                    <!-- Start Skill List Area 2nd  -->
-                                                    <div class="col-lg-6 col-md-12 col-12 mt_md--60 mt_sm--60">
-                                                        <div class="content">
-                                                            <span class="subtitle">2022 - 2024</span>
-                                                            <h4 class="maintitle">Job Experience</h4>
-                                                            <div class="experience-list">
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Graphic Design</h4>
-                                                                                <span>Arsa Study Consultants
-                                                                                    (2023-Continue)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>4.90/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">For the past two years, I
-                                                                            have been working as a graphic designer at
-                                                                            ARSA Study Consultants. In this role, I
-                                                                            specialize in creating visually compelling
-                                                                            marketing materials, including brochures,
-                                                                            social media graphics, and promotional
-                                                                            banners. My work involves collaborating with
-                                                                            the marketing team to develop designs that
-                                                                            effectively communicate our services and
-                                                                            engage our target audience. With a strong
-                                                                            attention to detail and a passion for
-                                                                            creativity, I contribute to enhancing the
-                                                                            brand's visual identity and supporting its
-                                                                            growth.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Graphic Design</h4>
-                                                                                <span>IFD College Sargodha (2022 -
-                                                                                    2023)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>5/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">With one year of
-                                                                            experience as a graphic designer at IFD
-                                                                            College Sargodha, I specialize in creating
-                                                                            visually appealing and effective designs for
-                                                                            various college materials. My
-                                                                            responsibilities include developing
-                                                                            promotional graphics, designing event
-                                                                            posters, and enhancing the overall visual
-                                                                            identity of the college. I work closely with
-                                                                            the administration and marketing teams to
-                                                                            ensure that all designs align with the
-                                                                            college's brand and communication goals. My
-                                                                            creative skills and attention to detail help
-                                                                            in delivering impactful visuals that engage
-                                                                            and inform our audience.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-                                                                <!-- Start Single List  -->
-                                                                <div class="resume-single-list">
-                                                                    <div class="inner">
-                                                                        <div class="heading">
-                                                                            <div class="title">
-                                                                                <h4>Online Marketing Business</h4>
-                                                                                <span>Graphic Design, Google Business, Products Marketing, E-Commerce (2022-Continue)</span>
-                                                                            </div>
-                                                                            <div class="date-of-time">
-                                                                                <span>5.00/5</span>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="description">As the owner of RA Graphics Agency and manager of my online marketing 
-                                                                            business, I offer a comprehensive suite of creative and strategic services tailored to 
-                                                                            today’s digital demands. My expertise spans across graphic design, YouTube channel management, 
-                                                                            Google Business, and social media operations, helping businesses establish a strong and 
-                                                                            professional online presence. In addition to these core services, I also work extensively 
-                                                                            in the e-commerce sector, providing support in setting up and managing online stores on 
-                                                                            platforms like Etsy. I develop and execute targeted strategies that enhance visibility, 
-                                                                            boost engagement, and increase sales. My approach is centered on understanding the unique 
-                                                                            needs of each brand and delivering customized solutions that drive real, measurable growth 
-                                                                            in a competitive digital marketplace.</p>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End Single List  -->
-
-
-
-
-                                                               
-                                                                <!-- End -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <!-- pricing area -->
-                                    <!-- Start News Area -->
-
-                                    <!-- ENd Mews Area -->
-                                    <!-- Start Contact section -->
-                                    <div class="rn-contact-area rn-section-gap section-separator" id="contacts">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="section-title text-center">
-                                                        <span class="subtitle">Contact</span>
-                                                        <h2 class="title">Contact With Me</h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
-                                                <div class="col-lg-5">
-                                                    <div class="contact-about-area">
-                                                        <div class="thumbnail">
-                                                            <img src="assets/images/contact/contact1.png"
-                                                                alt="contact-img">
-                                                        </div>
-                                                        <div class="title-area">
-                                                            <h4 class="title">Roshan Ali</h4>
-                                                            <span>Graphic Designer & Marketer</span>
-                                                        </div>
-                                                        <div class="description">
-                                                            <p>I am Available for Designing and Marketing Work. Please
-                                                                Contact on my Number for other Services.
-                                                            </p>
-                                                            <span class="phone">Phone: <a
-                                                                    href="https://wa.me/923117538314">+923117538314</a></span>
-                                                            <span class="mail">Email: <a
-                                                                    href="roshanshahid207@gmail.com">roshanshahid207@gmail.com</a></span>
-                                                        </div>
-                                                        <div class="social-area">
-                                                            <div class="name">FIND ME ON</div>
-                                                            <div class="social-icone">
-                                                                <a
-                                                                    href="https://www.facebook.com/profile.php?id=100019404931755&mibextid=ZbWKwL"><i
-                                                                        data-feather="facebook"></i></a>
-                                                                <a
-                                                                    href="https://www.linkedin.com/in/roshan-ali-63274b249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
-                                                                        data-feather="linkedin"></i></a>
-                                                                <a
-                                                                    href="https://instagram.com/roshaanali_117?igshid=NGVhN2U2NjQ0Yg=="><i
-                                                                        data-feather="instagram"></i></a>
-                                                                        
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div data-aos-delay="600" class="col-lg-7 contact-input">
-                                                    <div class="contact-form-wrapper">
-                                                        <div class="introduce">
-
-                                                            <form class="rnt-contact-form rwt-dynamic-form row"
-                                                                id="contact-form" method="POST" action="mail.php">
-
-                                                                <div class="col-lg-6">
-                                                                    <div class="form-group">
-                                                                        <label for="contact-name">Your Name</label>
-                                                                        <input class="form-control form-control-lg"
-                                                                            name="contact-name" id="contact-name"
-                                                                            type="text">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-6">
-                                                                    <div class="form-group">
-                                                                        <label for="contact-phone">Phone Number</label>
-                                                                        <input class="form-control" name="contact-phone"
-                                                                            id="contact-phone" type="text">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-12">
-                                                                    <div class="form-group">
-                                                                        <label for="contact-email">Email</label>
-                                                                        <input class="form-control form-control-sm"
-                                                                            id="contact-email" name="contact-email"
-                                                                            type="email">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-12">
-                                                                    <div class="form-group">
-                                                                        <label for="subject">subject</label>
-                                                                        <input class="form-control form-control-sm"
-                                                                            id="subject" name="subject" type="text">
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-12">
-                                                                    <div class="form-group">
-                                                                        <label for="contact-message">Your
-                                                                            Message</label>
-                                                                        <textarea name="contact-message"
-                                                                            id="contact-message" cols="30"
-                                                                            rows="10"></textarea>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-lg-12">
-                                                                    <button name="submit" type="submit" id="submit"
-                                                                        class="rn-btn">
-                                                                        <span>SEND MESSAGE</span>
-                                                                        <i data-feather="arrow-right"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Contuct section -->
-
-                                    <!-- Modal Portfolio Body area Start -->
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true"><i data-feather="x"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-
-                                                        <div class="col-lg-6">
-                                                            <div class="portfolio-popup-thumbnail">
-                                                                <div class="image">
-                                                                    <img class="w-100"
-                                                                        src="assets/images/portfolio/portfolio-01.jpg"
-                                                                        alt="slide">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6">
-                                                            <div class="text-content">
-                                                                <h3>
-                                                                    <span>Featured - Design</span> Social Media Post
-                                                                    Design.
-                                                                </h3>
-
-                                                                <div class="button-group mt--20">
-                                                                    <a href="https://wa.me/923117538314"
-                                                                        class="rn-btn thumbs-icon">
-                                                                        <span>LIKE THIS</span>
-
-                                                                    </a>
-                                                                    <a href="https://wa.me/923117538314" class="rn-btn">
-                                                                        <span>Cnontact Us</span>
-                                                                        <i data-feather="chevron-right"></i>
-                                                                    </a>
-                                                                </div>
-
-                                                            </div>
-                                                            <!-- End of .text-content -->
-                                                        </div>
-                                                    </div>
-                                                    <!-- End of .row Body-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Modal Portfolio area -->
-
-                                    <!-- Modal Portfolio Body area Start -->
-                                    <div class="modal fade" id="exampleModalCenterr" tabindex="-1" role="dialog"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true"><i data-feather="x"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-
-                                                        <div class="col-lg-6">
-                                                            <div class="portfolio-popup-thumbnail">
-                                                                <div class="image">
-                                                                    <img class="w-100"
-                                                                        src="assets/images/portfolio/portfolio-01.jpg"
-                                                                        alt="slide">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-lg-6">
-                                                            <div class="text-content">
-                                                                <h3>
-                                                                    <span></span> Social Media Post Design
-                                                                </h3>
-
-                                                                <a href="https://wa.me/923117538314" class="rn-btn">
-                                                                    <span>Contact Us</span>
-                                                                    <i data-feather="chevron-right"></i>
-                                                                </a>
-                                                            </div>
-
-                                                        </div>
-                                                        <!-- End of .text-content -->
-                                                    </div>
-                                                </div>
-                                                <!-- End of .row Body-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Modal Portfolio area -->
-
-                                <!-- Modal Portfolio Body area Start -->
-                                <div class="modal fade" id="ee" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true"><i data-feather="x"></i></span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="row">
-
-                                                    <div class="col-lg-6">
-                                                        <div class="portfolio-popup-thumbnail">
-                                                            <div class="image">
-                                                                <img class="w-100"
-                                                                    src="assets/images/portfolio/project-2.jpg"
-                                                                    alt="slide">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6">
-                                                        <div class="text-content">
-                                                            <h3>
-                                                                <span></span> Logo Design
-                                                            </h3>
-
-                                                            <a href="https://wa.me/923117538314" class="rn-btn">
-                                                                <span>Contact Us</span>
-                                                                <i data-feather="chevron-right"></i>
-                                                            </a>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- End of .text-content -->
-                                                </div>
-                                            </div>
-                                            <!-- End of .row Body-->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Modal Portfolio area -->
-
-
-                            <!-- Modal Portfolio Body area Start -->
-                            <div class="modal fade" id="exampleModalCente" tabindex="-1" role="dialog"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true"><i data-feather="x"></i></span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-
-                                                <div class="col-lg-6">
-                                                    <div class="portfolio-popup-thumbnail">
-                                                        <div class="image">
-                                                            <img class="w-100"
-                                                                src="assets/images/portfolio/portfolio-02.jpg"
-                                                                alt="slide">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <div class="text-content">
-                                                        <h3>
-                                                            <span></span> Thumbnail Design
-                                                        </h3>
-
-                                                        <a href="https://wa.me/923117538314" class="rn-btn">
-                                                            <span>Contact Us</span>
-                                                            <i data-feather="chevron-right"></i>
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <!-- End of .text-content -->
-                                            </div>
-                                        </div>
-                                        <!-- End of .row Body-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal Portfolio area -->
-
-                        <!-- Modal Portfolio Body area Start -->
-                        <div class="modal fade" id="exampleModalCent" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-
-                                            <div class="col-lg-6">
-                                                <div class="portfolio-popup-thumbnail">
-                                                    <div class="image">
-                                                        <img class="w-100"
-                                                            src="assets/images/portfolio/portfolio-03.jpg" alt="slide">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="text-content">
-                                                    <h3>
-                                                        <span></span> T Shirt Design
-                                                    </h3>
-
-                                                    <div class="button-group mt--20">
-                                                        <a href="https://wa.me/923117538314" class="rn-btn thumbs-icon">
-                                                            <span>Contact Us</span>
-
-                                                        </a>
-                                                        <!-- <a href="https://inamurrehman420.github.io/easybux/" class="rn-btn">
-                                    <span>VIEW PROJECT</span>
-                                    <i data-feather="chevron-right"></i>
-                                </a> -->
-                                                    </div>
-
-                                                </div>
-                                                <!-- End of .text-content -->
-                                            </div>
-                                        </div>
-                                        <!-- End of .row Body-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal Portfolio area -->
-                        <!-- Modal Portfolio Body area Start -->
-                        <div class="modal fade" id="exampleModalCen" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-
-                                            <div class="col-lg-6">
-                                                <div class="portfolio-popup-thumbnail">
-                                                    <div class="image">
-                                                        <img class="w-100"
-                                                            src="assets/images/portfolio/portfolio-04.jpg" alt="slide">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="text-content">
-                                                    <h3>
-                                                        <span></span> Business Card Design.
-                                                    </h3>
-
-                                                    <div class="button-group mt--20">
-                                                        <a href="https://wa.me/923117538314" class="rn-btn thumbs-icon">
-                                                            <span>Contact Us</span>
-
-                                                        </a>
-                                                        <!-- <a href="https://inamurrehman420.github.io/easybux/" class="rn-btn">
-                                    <span>VIEW PROJECT</span>
-                                    <i data-feather="chevron-right"></i>
-                                </a> -->
-                                                    </div>
-
-                                                </div>
-                                                <!-- End of .text-content -->
-                                            </div>
-                                        </div>
-                                        <!-- End of .row Body-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Modal Portfolio area -->
-                        <!-- Modal Portfolio Body area Start -->
-                        <div class="modal fade" id="exampleModalCe" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true"><i data-feather="x"></i></span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-
-                                            <div class="col-lg-6">
-                                                <div class="portfolio-popup-thumbnail">
-                                                    <div class="image">
-                                                        <img class="w-100"
-                                                            src="assets/images/portfolio/portfolio-05.jpg" alt="slide">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-6">
-                                                <div class="text-content">
-                                                    <h3>
-                                                        <span></span> 3D Editing
-                                                    </h3>
-
-                                                    <div class="button-group mt--20">
-                                                        <a href="https://wa.me/923117538314" class="rn-btn thumbs-icon">
-                                                            <span>Contact Us</span>
-
-                                                        </a>
-                                                         </div>
-
-                                                </div>
-                                                <!-- End of .text-content -->
-                                            </div>
-                                        </div>
-                                        <!-- End of .row Body-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- End of .text-content -->
-            </div>
-        </div>
-        <!-- End of .row Body-->
-        </div>
-        </div>
-        </div>
-        </div>
-        <!-- End Modal Portfolio area -->
-
-
-
-
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <!-- End Modal Area  -->
-
-    </main>
-
-    <!-- Start Footer Area -->
-    <div class="rn-footer-area rn-section-gap section-separator">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-area text-center">
-
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo/logo-vertical.png" alt="logo">
-                            </a>
-                        </div>
-
-                        <p class="description mt--30">© Roshan Ali 2024. All rights reserved by Roshan Ali <a
-                                target="_blank"></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3 text-sm">
+      <a href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
     </div>
-    <!-- End Footer Area -->
+  </header>
 
-    <!-- JS ============================================ -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/modernizer.min.js"></script>
-    <script src="assets/js/vendor/feather.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.js"></script>
-    <script src="assets/js/vendor/text-type.js"></script>
-    <script src="assets/js/vendor/wow.js"></script>
-    <script src="assets/js/vendor/aos.js"></script>
-    <script src="assets/js/vendor/particles.js"></script>
-    <!-- main JS -->
-    <script src="assets/js/main.js"></script>
+  <div class="glow-spot glow-1"></div>
+  <div class="glow-spot glow-2"></div>
+  <div class="glow-spot glow-3"></div>
+  <main>
+  <!-- Hero -->
+  <section id="home" class="relative pt-32 pb-20 min-h-screen flex items-center">
+    <div class="hero-glow"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div>
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span> Available for new projects
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+          Crafting Exceptional <span class="gradient-text">Visual Designs</span>
+        </h1>
+        <p class="text-lg text-gray-400 mb-8 max-w-xl">
+          Transforming ideas into compelling visual experiences with a focus on brand identity, creativity, and cutting-edge design.
+        </p>
+        <div class="btn-group flex flex-col sm:flex-row flex-wrap gap-4 mt-8">
+          <a href="#contact" class="btn-primary interactive w-full sm:w-auto px-6 py-3 rounded-full font-semibold inline-flex items-center justify-center gap-2">Let's Talk <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          <a href="C work/portfolio.html" class="btn-secondary interactive w-full sm:w-auto px-6 py-3 rounded-full font-semibold inline-flex items-center justify-center gap-2">My Clients <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a href="https://drive.google.com/file/d/1cz8t2nPo1K1PZpFelslWI5LarZ7R9wV-/view" target="_blank" class="btn-secondary interactive w-full sm:w-auto px-6 py-3 rounded-full font-semibold inline-flex items-center justify-center gap-2">My Portfolio Work <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a href="#projects" class="btn-secondary interactive w-full sm:w-auto px-6 py-3 rounded-full font-semibold inline-flex items-center justify-center gap-2">Learn More <i data-lucide="arrow-down" class="w-4 h-4"></i></a>
+        </div>
+        <div class="flex items-center gap-6 mt-8">
+          <div>
+            <span class="block text-xs text-gray-500 uppercase tracking-wider mb-2">find me on</span>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/profile.php?id=100019404931755" target="_blank" class="glass w-10 h-10 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+              <a href="https://instagram.com/roshaanali_117" target="_blank" class="glass w-10 h-10 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://www.linkedin.com/in/roshan-ali-63274b249" target="_blank" class="glass w-10 h-10 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="https://youtube.com/@roshaanofficial001" target="_blank" class="glass w-10 h-10 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative flex justify-center">
+        <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/30 to-purple-500/30 blur-3xl rounded-full blob"></div>
+        <div class="bubble" style="width:60px;height:60px;top:10%;left:5%;animation-delay:0s;"></div>
+        <div class="bubble" style="width:40px;height:40px;top:70%;left:0%;animation-delay:1s;"></div>
+        <div class="bubble" style="width:25px;height:25px;top:30%;right:5%;animation-delay:2s;"></div>
+        <div class="bubble" style="width:50px;height:50px;bottom:10%;right:0%;animation-delay:1.5s;"></div>
+        <img src="assets/images/slider/banner-01.png" alt="Roshan Ali" class="relative w-80 md:w-96 drop-shadow-2xl animate-[float_6s_ease-in-out_infinite] rounded-3xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Real-world Results</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">Featured Projects</h2>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">See how I transformed ideas into powerful and scalable visual solutions.</p>
+      </div>
+      <div class="space-y-16">
+        <!-- Project 1 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="glass rounded-2xl overflow-hidden card-hover">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/portfolio-01.jpg" alt="Social Media Post" class="w-full h-72 object-cover project-img"></div>
+          </div>
+          <div>
+            <span class="text-xs text-purple-400 font-semibold">Social Media • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Social Media Post Design</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Engaging visuals that boost reach.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Brand-consistent templates.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Optimized for all platforms.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="order-2 lg:order-1">
+            <span class="text-xs text-purple-400 font-semibold">Branding • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Logo Design Work</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Memorable brand identities.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Vector & scalable formats.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Multiple concept variations.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="glass rounded-2xl overflow-hidden card-hover order-1 lg:order-2">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/project-2.jpg" alt="Logo" class="w-full h-72 object-cover project-img"></div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="glass rounded-2xl overflow-hidden card-hover">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/portfolio-02.jpg" alt="Thumbnail" class="w-full h-72 object-cover project-img"></div>
+          </div>
+          <div>
+            <span class="text-xs text-purple-400 font-semibold">YouTube • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Thumbnail Design</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>High CTR thumbnails.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Eye-catching typography.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Platform-optimized.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="order-2 lg:order-1">
+            <span class="text-xs text-purple-400 font-semibold">Apparel • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">T-Shirt Design Work</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Print-ready artwork.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Trendy concepts.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Multiple colorways.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="glass rounded-2xl overflow-hidden card-hover order-1 lg:order-2">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/portfolio-03.jpg" alt="Tshirt" class="w-full h-72 object-cover project-img"></div>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="glass rounded-2xl overflow-hidden card-hover">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/portfolio-04.jpg" alt="Business Card" class="w-full h-72 object-cover project-img"></div>
+          </div>
+          <div>
+            <span class="text-xs text-purple-400 font-semibold">Print • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">Business Card Design</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Premium finishes.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Brand-aligned layouts.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Print-ready files.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-start reveal">
+          <div class="order-2 lg:order-1">
+            <span class="text-xs text-purple-400 font-semibold">3D • 2024</span>
+            <h3 class="text-3xl font-bold mt-2 mb-4">3D Editing Work</h3>
+            <ul class="space-y-2 text-gray-300 mb-6">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Realistic renders.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>Product visualization.</li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-400 mt-1"></i>High-quality output.</li>
+            </ul>
+            <a href="https://wa.me/923117538314" class="btn-primary interactive px-5 py-2.5 rounded-full font-semibold inline-flex items-center gap-2">Contact Me <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          </div>
+          <div class="glass rounded-2xl overflow-hidden card-hover order-1 lg:order-2">
+            <div class="overflow-hidden"><img src="assets/images/portfolio/portfolio-05.jpg" alt="3D" class="w-full h-72 object-cover project-img"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <section class="py-10 border-y border-white/5 overflow-hidden">
+    <div class="marquee text-2xl font-bold text-gray-600">
+      <span class="mx-8">Creative</span><span class="mx-8">Modern</span><span class="mx-8">Brand-focused</span><span class="mx-8">User-friendly</span><span class="mx-8">Print-ready</span><span class="mx-8">Responsive</span><span class="mx-8">Eye-catching</span><span class="mx-8">Innovative</span>
+      <span class="mx-8">Creative</span><span class="mx-8">Modern</span><span class="mx-8">Brand-focused</span><span class="mx-8">User-friendly</span><span class="mx-8">Print-ready</span><span class="mx-8">Responsive</span><span class="mx-8">Eye-catching</span><span class="mx-8">Innovative</span>
+    </div>
+  </section>
+
+  <!-- Thoughts & Blogs -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Thoughts and Blogs</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">Read My Narrative</h2>
+        <p class="text-gray-400 mt-4">Pages filled with design insights, creative processes, and much more.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="glass rounded-2xl p-6 card-hover reveal">
+          <h3 class="text-xl font-bold mb-3">Building a Brand Identity: From Concept to Deployment</h3>
+          <p class="text-gray-400 text-sm mb-4">How I approach logo and brand systems for clients.</p>
+          <button type="button" class="text-xs text-pink-400 cursor-pointer" onclick="openBlog('Building a Brand Identity: From Concept to Deployment','How I approach logo and brand systems for clients, from initial concept to final deployment.')">Read more →</button>
+        </article>
+        <article class="glass rounded-2xl p-6 card-hover reveal">
+          <h3 class="text-xl font-bold mb-3">Crafting Modern UI: Sleek Components with Tailwind</h3>
+          <p class="text-gray-400 text-sm mb-4">My process for designing clean, modern interfaces.</p>
+          <button type="button" class="text-xs text-pink-400 cursor-pointer" onclick="openBlog('Crafting Modern UI: Sleek Components with Tailwind','My process for designing clean, modern interfaces using Tailwind CSS.')">Read more →</button>
+        </article>
+        <article class="glass rounded-2xl p-6 card-hover reveal">
+          <h3 class="text-xl font-bold mb-3">Effortless Social Media: Automate Your Content</h3>
+          <p class="text-gray-400 text-sm mb-4">Strategies for consistent, engaging social presence.</p>
+          <button type="button" class="text-xs text-pink-400 cursor-pointer" onclick="openBlog('Effortless Social Media: Automate Your Content','Strategies for consistent, engaging social presence across platforms.')">Read more →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-white/0">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">references from a few folks</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">Word on the Street About Me</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-2xl p-8 reveal">
+          <p class="text-gray-300 mb-6">"Roshan delivered exceptional graphic design work. His creativity and attention to detail made our brand stand out."</p>
+          <div class="flex items-center gap-4">
+            <img src="assets/images/contact/contact1.png" class="w-12 h-12 rounded-full object-cover" alt="client">
+            <div><div class="font-semibold">Arsa Study Consultants</div><div class="text-xs text-gray-500">Client</div></div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-8 reveal">
+          <p class="text-gray-300 mb-6">"Professional, responsive, and creative. Roshan handled our social media and marketing with great results."</p>
+          <div class="flex items-center gap-4">
+            <img src="assets/images/contact/contact1.png" class="w-12 h-12 rounded-full object-cover" alt="client">
+            <div><div class="font-semibold">Online Client</div><div class="text-xs text-gray-500">E-Commerce</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">About Me</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2 mb-6">Know who I am</h2>
+        <p class="text-gray-300 mb-4">My journey in a few words.</p>
+        <p class="text-gray-400 mb-6">I'm a creative graphic designer with experience in brand identity, social media marketing, and e-commerce. I specialize in UI design and crafting engaging visual experiences with great attention to detail.</p>
+        <a href="https://drive.google.com/file/d/1IYF0akqlN7Eskr37kRFijiAUhQH1fHdc/view?usp=drive_link" target="_blank" class="btn-primary interactive px-6 py-3 rounded-full font-semibold inline-flex items-center gap-2">Download Resume <i data-lucide="download" class="w-4 h-4"></i></a>
+      </div>
+      <div class="relative reveal">
+        <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 blur-3xl rounded-full"></div>
+        <img src="assets/images/slider/banner-01.png" alt="Profile" class="relative w-72 mx-auto drop-shadow-2xl rounded-3xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech stacks / tools -->
+  <section class="py-24 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Beyond Portfolio</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">My Tech Stacks & Tools</h2>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <img src="assets/images/icons/photoshop.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Photoshop">
+        <img src="assets/images/icons/figma.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Figma">
+        <img src="assets/images/icons/xd.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="XD">
+        <img src="assets/images/icons/angularjs.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Angular">
+        <img src="assets/images/icons/react.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="React">
+        <img src="assets/images/icons/vuejs.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="Vue">
+        <img src="assets/images/icons/js.png" class="w-16 h-16 object-contain glass rounded-xl p-2" alt="JS">
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 gap-8 items-stretch">
+        <div class="glass rounded-2xl p-6 reveal flex flex-col">
+          <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5"></i>Current Blog</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">Designing a Brand from Scratch: My Process</p>
+          <img src="assets/images/portfolio/portfolio-01.jpg" class="w-full h-48 object-cover rounded-xl mt-auto" alt="blog">
+        </div>
+        <div class="glass rounded-2xl p-6 reveal flex flex-col">
+          <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><i data-lucide="code" class="w-5 h-5"></i>Beyond the Code</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow">Explore my interests and hobbies beyond the digital realm.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 glass rounded-full text-sm inline-flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4"></i>Art</span>
+            <span class="px-3 py-1 glass rounded-full text-sm inline-flex items-center gap-2"><i data-lucide="camera" class="w-4 h-4"></i>Photography</span>
+            <span class="px-3 py-1 glass rounded-full text-sm inline-flex items-center gap-2"><i data-lucide="plane" class="w-4 h-4"></i>Travel</span>
+            <span class="px-3 py-1 glass rounded-full text-sm inline-flex items-center gap-2"><i data-lucide="music" class="w-4 h-4"></i>Music</span>
+            <span class="px-3 py-1 glass rounded-full text-sm inline-flex items-center gap-2"><i data-lucide="utensils" class="w-4 h-4"></i>Cooking</span>
+          </div>
+          <img src="assets/images/portfolio/portfolio-03.jpg" class="w-full h-48 object-cover rounded-xl mt-auto" alt="hobby">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center reveal">
+      <h3 class="text-2xl font-bold mb-6">Explore my socials.</h3>
+      <div class="flex justify-center gap-6">
+        <a href="https://www.facebook.com/profile.php?id=100019404931755" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/in/roshan-ali-63274b249" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://instagram.com/roshaanali_117" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com/@roshaanofficial001" target="_blank" class="glass w-14 h-14 rounded-full flex items-center justify-center hover:text-pink-400 interactive"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience timeline -->
+  <!-- Skills -->
+  <section id="skills" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">My Skills</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">What I'm Good At</h2>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Graphic Designing</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Social Media Marketing</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Etsy (E-Commerce)</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Products Selling</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Textile Designing</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Clients Management</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Artificial Intelligence</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Art Designing</span>
+        <span class="px-5 py-2 glass rounded-full text-sm font-medium">Business Marketing Management</span>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">My Experiences</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">Where I've Been Employed</h2>
+      </div>
+      <div class="relative max-w-3xl mx-auto">
+        <div class="absolute left-4 top-0 bottom-0 w-px bg-white/10"></div>
+        <div class="space-y-10">
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">CEO & Founder | Tecnify College of Technology®</h3>
+            <p class="text-xs text-gray-500 mb-2">2025 - Present</p>
+            <p class="text-gray-400 text-sm">Led the development and management of AI & IT training programs for students and professionals. Designed and implemented skill-based courses focused on modern technology and digital innovation.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Agency Owner | RA Graphics Agency</h3>
+            <p class="text-xs text-gray-500 mb-2">2022 - Present</p>
+            <p class="text-gray-400 text-sm">Lead a diverse range of creative and strategic tasks, including graphic design, YouTube channel management, Google Business optimization, and social media operations. Develop and execute marketing strategies to increase visibility and brand awareness.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Designer | Arsa Study Consultants (PVT. LTD)®</h3>
+            <p class="text-xs text-gray-500 mb-2">Graphic Designer</p>
+            <p class="text-gray-400 text-sm">Designed creative graphics, promotional materials, and digital assets aligned with the organization's mission. Developed visually appealing and impactful content to enhance brand communication. Managed social media content creation to engage and resonate with the target audience. Played a key role in strengthening the organization's visual identity and outreach efforts.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Designer | Tecrix (PVT. LTD)®</h3>
+            <p class="text-xs text-gray-500 mb-2">2024 - Present</p>
+            <p class="text-gray-400 text-sm">Created visually captivating graphics for product promotions, branding, and marketing campaigns. Designed marketing materials aligned with the company's vision to strengthen its brand identity.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Design & E-Commerce Specialist | Zoha Textile Indonesia®</h3>
+            <p class="text-xs text-gray-500 mb-2">2024 - 2025</p>
+            <p class="text-gray-400 text-sm">Led creative and strategic initiatives to strengthen the brand's presence in the competitive textile industry. Designed visually captivating graphics for product promotions, marketing campaigns, and branding materials.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Design & Social Media Marketer | Creative Solutions</h3>
+            <p class="text-xs text-gray-500 mb-2">2024 - 2025</p>
+            <p class="text-gray-400 text-sm">Managed social media platforms, creating engaging content that increased audience reach and interaction. Developed and executed digital marketing strategies to improve brand visibility. Ensured creative consistency across online campaigns, advertisements, and brand assets.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Design Instructor | IFD College Sargodha</h3>
+            <p class="text-xs text-gray-500 mb-2">2022 - 2023</p>
+            <p class="text-gray-400 text-sm">Trained learners in using professional software to create real-world design projects. Guided students in developing creative portfolios suitable for industry applications. Encouraged creativity, innovation, and problem-solving in classroom projects.</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Graphic Designer | Nexus Skill Pakistan</h3>
+            <p class="text-xs text-gray-500 mb-2">2023 - 2024</p>
+            <p class="text-gray-400 text-sm">Designed creative visuals, logos, and promotional materials tailored to client needs. Developed engaging social media graphics to boost online presence and audience interaction. Collaborated with the marketing team to ensure brand consistency across all platforms.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Education</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">My Education</h2>
+      </div>
+      <div class="relative max-w-3xl mx-auto">
+        <div class="absolute left-4 top-0 bottom-0 w-px bg-white/10"></div>
+        <div class="space-y-10">
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Matric Computer Science</h3>
+            <p class="text-xs text-gray-500 mb-2">Govt. Model High School No.1 Sargodha (2020 - 2021)</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">DIT Information Technology</h3>
+            <p class="text-xs text-gray-500 mb-2">Fips College Sargodha (2022 - 2023)</p>
+          </div>
+          <div class="relative pl-12 reveal">
+            <div class="timeline-dot absolute left-2 top-2 w-4 h-4 rounded-full"></div>
+            <h3 class="text-xl font-bold">Textile Design Diploma</h3>
+            <p class="text-xs text-gray-500 mb-2">IFD College Sargodha (2021 - 2022)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Gallery -->
+  <section id="gallery" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">My Work</span>
+        <h2 class="text-4xl md:text-5xl font-black mt-2">Portfolio Gallery</h2>
+      </div>
+      <div class="grid grid-cols-4 gap-3" id="galleryGrid">
+        <img src="work/1.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/2.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/3.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/4.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/5.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/6.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/7.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/8.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+        <img src="work/9.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/10.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/11.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/12.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/13.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/14.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/15.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/16.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/17.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/18.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/19.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/20.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+        <img src="work/21.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
+      </div>
+      <div class="text-center mt-8">
+        <button id="showMoreBtn" class="btn-primary interactive px-6 py-3 rounded-full font-semibold">Show More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Me -->
+  <section id="why" class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Top-Rated Freelancer</span>
+      <h2 class="text-4xl md:text-5xl font-black mt-2 mb-6">200+ Projects Completed</h2>
+      <p class="text-gray-300 mb-8">I deliver fast, premium-quality services tailored to your exact needs. With a proven track record of 200+ successfully completed projects, my top priority is maintaining a 100% satisfied client base through clear communication and rapid delivery.</p>
+      <h3 class="text-2xl font-bold mb-4">Why Choose Me?</h3>
+      <ul class="text-left space-y-3 max-w-2xl mx-auto text-gray-300">
+        <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-pink-400 mt-1"></i>100% Client Satisfaction Guaranteed: I work closely with you until the final result matches your vision perfectly.</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-pink-400 mt-1"></i>Super-Fast Service: I respect your deadlines and deliver high-quality work with lightning-fast turnaround times.</li>
+        <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-pink-400 mt-1"></i>Proven Experience: Trusted across more than 200+ projects with exceptional results.</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Contact -->
+  <section id="contact" class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center reveal">
+      <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">Let's Connect</span>
+      <h2 class="text-4xl md:text-6xl font-black mt-2 mb-6">Let's Connect and Create Something Amazing!</h2>
+      <p class="text-gray-400 mb-8">Reach out to me for a project or just to say hi.</p>
+      <a href="mailto:roshanshahid207@gmail.com" class="btn-primary interactive px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2 text-lg">Contact Me <i data-lucide="mail" class="w-5 h-5"></i></a>
+      <div class="mt-10 text-gray-400 space-y-1">
+        <p>Phone: <a href="https://wa.me/923117538314" class="text-pink-400">+923117538314</a></p>
+        <p>Email: <a href="mailto:roshanshahid207@gmail.com" class="text-pink-400">roshanshahid207@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <div id="blogModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+    <div class="glass rounded-2xl p-8 max-w-lg w-full mx-4">
+      <h3 id="blogTitle" class="text-2xl font-bold mb-4"></h3>
+      <p id="blogText" class="text-gray-300 mb-6"></p>
+      <button type="button" onclick="closeBlog()" class="btn-primary interactive px-5 py-2 rounded-full">Close</button>
+    </div>
+  </div>
+  <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
+    Created by Roshan Ali • <a href="https://linkedin.com/in/roshan-ali-63274b249" class="hover:text-pink-400 interactive">LinkedIn</a>
+  </footer>
+
+  <div class="liquid-blob-cursor"></div>
+  <script>
+    lucide.createIcons();
+    const blob=document.querySelector('.liquid-blob-cursor');
+    const interactives=document.querySelectorAll('.interactive');
+    let mouseX=0,mouseY=0,blobX=0,blobY=0,velX=0,velY=0,lastTime=Date.now();
+    window.addEventListener('mousemove',e=>{
+      mouseX=e.clientX;mouseY=e.clientY;
+      const currentVel=Math.hypot(e.movementX,e.movementY);
+      if(currentVel>12 && Math.random()>.4) createDroplet(e.clientX,e.clientY);
+    });
+    function createDroplet(x,y){
+      const droplet=document.createElement('div');
+      droplet.className='liquid-droplet';
+      droplet.style.left=x+'px';droplet.style.top=y+'px';
+      document.body.appendChild(droplet);
+      setTimeout(()=>droplet.remove(),550);
+    }
+    function animateBlob(){
+      const now=Date.now();
+      const dt=Math.min((now-lastTime)/1000,.1);
+      lastTime=now;
+      const lerpSpeed=.18;
+      velX=(mouseX-blobX)*lerpSpeed;
+      velY=(mouseY-blobY)*lerpSpeed;
+      blobX+=velX;blobY+=velY;
+      const speed=Math.hypot(velX,velY);
+      const angle=Math.atan2(velY,velX)*(180/Math.PI);
+      const stretchScale=Math.min(speed*.045,.5);
+      const scaleX=1+stretchScale;
+      const scaleY=1-(stretchScale*.5);
+      if(!blob.classList.contains('is-hovering')){
+        blob.style.left=blobX+'px';blob.style.top=blobY+'px';
+        blob.style.transform=`translate(-50%,-50%) rotate(${angle}deg) scale(${scaleX},${scaleY})`;
+      } else {
+        blob.style.left=blobX+'px';blob.style.top=blobY+'px';
+        blob.style.transform='translate(-50%,-50%) scale(1)';
+      }
+      requestAnimationFrame(animateBlob);
+    }
+    animateBlob();
+    interactives.forEach(el=>{
+      el.addEventListener('mouseenter',()=>blob.classList.add('is-hovering'));
+      el.addEventListener('mouseleave',()=>blob.classList.remove('is-hovering'));
+    });
+    function openBlog(title,text){document.getElementById('blogTitle').textContent=title;document.getElementById('blogText').textContent=text;document.getElementById('blogModal').classList.remove('hidden');}
+    function closeBlog(){document.getElementById('blogModal').classList.add('hidden');}
+    const pContainer=document.getElementById('particles');
+    for(let i=0;i<25;i++){const s=document.createElement('span');s.className='particle';const size=4+Math.random()*6;s.style.width=size+'px';s.style.height=size+'px';s.style.left=Math.random()*100+'%';s.style.bottom=Math.random()*20+'%';s.style.animationDelay=Math.random()*8+'s';s.style.animationDuration=(6+Math.random()*6)+'s';pContainer.appendChild(s);}
+    const showMoreBtn=document.getElementById('showMoreBtn');
+    if(showMoreBtn){showMoreBtn.addEventListener('click',()=>{document.querySelectorAll('.extra-img').forEach(el=>el.classList.remove('hidden'));showMoreBtn.style.display='none';});}
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});},{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
 </body>
-
 </html>

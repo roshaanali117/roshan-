@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roshan Ali || Ultra Liquid Blob Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #0b0716;
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      cursor: none; /* Default cursor hidden */
+    }
+
+    /* --------------------------------------------------
+       ULTRA LIQUID BLOB CURSOR ENGINE (CSS)
+    -------------------------------------------------- */
+
+    /* Main High-Tech Liquid Cursor Blob */
+    .liquid-blob-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%) scale(1);
+      
+      /* Glassmorphism & Liquid Gradient */
+      background: radial-gradient(circle at 35% 35%, rgba(244, 114, 182, 0.95), rgba(168, 85, 247, 0.75) 60%, rgba(99, 102, 241, 0.4));
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+
+      /* Multi-layer Neon Glow Effect */
+      box-shadow: 
+        0 0 15px rgba(244, 114, 182, 0.6),
+        0 0 35px rgba(168, 85, 247, 0.4),
+        inset 0 0 10px rgba(255, 255, 255, 0.6);
+
+      transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                  height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                  background 0.3s ease,
+                  border-radius 0.3s ease,
+                  border-color 0.3s ease;
+    }
+
+    /* Precision Center Dot inside Blob */
+    .liquid-blob-cursor::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: #ffffff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 8px #ffffff;
+      opacity: 0.9;
+    }
+
+    /* Magnetic Hover State (Jab interactive elements par mouse jaye) */
+    .liquid-blob-cursor.is-hovering {
+      width: 65px;
+      height: 65px;
+      background: radial-gradient(circle at 30% 30%, rgba(244, 114, 182, 0.3), rgba(168, 85, 247, 0.25) 70%);
+      border-color: rgba(244, 114, 182, 0.9);
+      box-shadow: 
+        0 0 25px rgba(244, 114, 182, 0.8),
+        0 0 50px rgba(168, 85, 247, 0.5),
+        inset 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    .liquid-blob-cursor.is-hovering::after {
+      opacity: 0; /* Center dot hides on hover for clean lens view */
+    }
+
+    /* Dynamic Trail Particles (Mouse movement droplets) */
+    .liquid-droplet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.8), rgba(168, 85, 247, 0.4));
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+      animation: fadeDroplet 0.55s ease-out forwards;
+    }
+
+    @keyframes fadeDroplet {
+      0% {
+        opacity: 0.85;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.1);
+      }
+    }
+
+    /* --------------------------------------------------
+       MOCK WEBSITE PORTFOLIO LAYOUT (Your Theme Setup)
+    -------------------------------------------------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f472b6, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f472b6;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 5%;
+      min-height: 75vh;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 550px;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(236, 72, 153, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(236, 72, 153, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      transition: 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Ambient Background Orbs */
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+    .orb-1 { width: 300px; height: 300px; top: 10%; left: 35%; }
+    .orb-2 { width: 220px; height: 220px; top: 40%; right: 10%; }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs matching your UI -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <!-- Ultra Liquid Blob Custom Cursor Element -->
+  <div class="liquid-blob-cursor"></div>
+
+  <!-- Page Content -->
+  <header>
+    <div class="logo">Roshan Ali</div>
+    <nav>
+      <a href="#" class="interactive">Home</a>
+      <a href="#" class="interactive">Projects</a>
+      <a href="#" class="interactive">About</a>
+      <a href="#" class="interactive">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1>Transforming ideas into compelling visual experiences.</h1>
+      <p style="color: #94a3b8; line-height: 1.6;">
+        Specializing in modern web design, full-stack tools, and cutting-edge interactive web applications.
+      </p>
+      
+      <div class="btn-group">
+        <a href="#" class="btn-primary interactive">Let's Talk &rarr;</a>
+        <a href="#" class="btn-secondary interactive">Learn More &darr;</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /* --------------------------------------------------
+       ULTRA LIQUID BLOB CURSOR ENGINE (JavaScript)
+    -------------------------------------------------- */
+    const blob = document.querySelector('.liquid-blob-cursor');
+    const interactives = document.querySelectorAll('.interactive');
+
+    let mouseX = 0, mouseY = 0;
+    let blobX = 0, blobY = 0;
+    let velX = 0, velY = 0;
+    let lastTime = Date.now();
+
+    // Track Mouse Coordinates
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Spawn liquid droplets on mouse drag/movement (Speed responsive)
+      const currentVel = Math.hypot(e.movementX, e.movementY);
+      if (currentVel > 12 && Math.random() > 0.4) {
+        createDroplet(e.clientX, e.clientY);
+      }
+    });
+
+    // Create Liquid Trail Droplets
+    function createDroplet(x, y) {
+      const droplet = document.createElement('div');
+      droplet.className = 'liquid-droplet';
+      droplet.style.left = `${x}px`;
+      droplet.style.top = `${y}px`;
+      document.body.appendChild(droplet);
+
+      setTimeout(() => {
+        droplet.remove();
+      }, 550);
+    }
+
+    // High-Performance Smooth Animation Loop (Physics-based Stretching)
+    function animateBlob() {
+      const now = Date.now();
+      const dt = Math.min((now - lastTime) / 1000, 0.1);
+      lastTime = now;
+
+      // Smooth Lerp (Lag Factor)
+      const lerpSpeed = 0.18;
+      velX = (mouseX - blobX) * lerpSpeed;
+      velY = (mouseY - blobY) * lerpSpeed;
+
+      blobX += velX;
+      blobY += velY;
+
+      // Calculate Speed & Angle for Dynamic Distortion (Stretching Blob Effect)
+      const speed = Math.hypot(velX, velY);
+      const angle = Math.atan2(velY, velX) * (180 / Math.PI);
+      
+      // Scale limits for realistic liquid stretch
+      const stretchScale = Math.min(speed * 0.045, 0.5);
+      const scaleX = 1 + stretchScale;
+      const scaleY = 1 - (stretchScale * 0.5);
+
+      // Apply Matrix Transformations
+      if (!blob.classList.contains('is-hovering')) {
+        blob.style.left = `${blobX}px`;
+        blob.style.top = `${blobY}px`;
+        blob.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${scaleX}, ${scaleY})`;
+      } else {
+        // Smooth Hover Tracking
+        blob.style.left = `${blobX}px`;
+        blob.style.top = `${blobY}px`;
+        blob.style.transform = `translate(-50%, -50%) scale(1)`;
+      }
+
+      requestAnimationFrame(animateBlob);
+    }
+
+    // Start Physics Animation Loop
+    animateBlob();
+
+    // Add Magnetic Hover Triggers
+    interactives.forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        blob.classList.add('is-hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        blob.classList.remove('is-hovering');
+      });
+    });
+  </script>
+</body>
+</html>
