@@ -493,15 +493,15 @@
         <span class="text-sm text-pink-400 font-semibold uppercase tracking-wider">My Work</span>
         <h2 class="text-3xl md:text-5xl font-black mt-2">Portfolio Gallery</h2>
       </div>
-      <div class="grid grid-cols-4 gap-3" id="galleryGrid">
-        <img src="work/1.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/2.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/3.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/4.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/5.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/6.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/7.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
-        <img src="work/8.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img" alt="work">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="galleryGrid">
+        <img src="work/1.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/2.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/3.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/4.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/5.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/6.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/7.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
+        <img src="work/8.jpg" onclick="openLightbox(this.src)" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img cursor-pointer" alt="work">
         <img src="work/9.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
         <img src="work/10.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
         <img src="work/11.jpg" class="w-full h-40 object-cover rounded-xl glass card-hover gallery-img extra-img hidden" alt="work">
@@ -558,6 +558,9 @@
       <button type="button" onclick="closeBlog()" class="btn-primary interactive px-5 py-2 rounded-full">Close</button>
     </div>
   </div>
+  <div id="lightbox" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="full" class="max-w-full max-h-full rounded-2xl shadow-2xl">
+  </div>
   <footer class="py-8 border-t border-white/5 text-center text-gray-500 text-sm">
     Created by Roshan Ali • <a href="https://linkedin.com/in/roshan-ali-63274b249" class="hover:text-pink-400 interactive">LinkedIn</a>
   </footer>
@@ -609,6 +612,8 @@
     });
     function openBlog(title,text){document.getElementById('blogTitle').textContent=title;document.getElementById('blogText').textContent=text;document.getElementById('blogModal').classList.remove('hidden');}
     function closeBlog(){document.getElementById('blogModal').classList.add('hidden');}
+    function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.remove('hidden');}
+    function closeLightbox(){document.getElementById('lightbox').classList.add('hidden');}
     const pContainer=document.getElementById('particles');
     for(let i=0;i<25;i++){const s=document.createElement('span');s.className='particle';const size=4+Math.random()*6;s.style.width=size+'px';s.style.height=size+'px';s.style.left=Math.random()*100+'%';s.style.bottom=Math.random()*20+'%';s.style.animationDelay=Math.random()*8+'s';s.style.animationDuration=(6+Math.random()*6)+'s';pContainer.appendChild(s);}
     const showMoreBtn=document.getElementById('showMoreBtn');
